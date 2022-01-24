@@ -59,7 +59,7 @@ mathy   us: English (US Mathy)
 sudo dpkg-reconfigure xkb-data
 ```
 
-Failing this, restarting your X-session or your system should suffice. 
+Failing this, restarting your X-session on your system should suffice. 
 
 ## To do:
 
