@@ -50,7 +50,7 @@ mathy   us: English (US Mathy)
     <name>mathy</name>
     <description>English (US Mathy)</description>
    </configItem>
- </variant>
+</variant>
 ```
 
 5. xkb needs to be reconfigured for it to recognize your changes. In a terminal shell run the following command:
