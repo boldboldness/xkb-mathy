@@ -12,7 +12,7 @@ The layout is your typical four level keyboard. By default holding AltGr (the ri
 
 The true power of this requires use of the "Compose Key". This, coupled with my hatred of Caps Lock, compelled me to replace Caps Lock with Compose. Further down this file ~~are~~ will be suggested configuration change if you happen to hate this or any other default.
 
-// TODO: Create a visual of the layout. The code is commented 
+// TODO: Create a visual of the layout. Keybindings can be seen in code comments. 
 
 The layout is a heavy modification of the standard Greek layout (which mercifully is already organized to be similar to QUERTY). All punctuation keys, number keys, and arrow keys are replaced at Levels 3 and 4. Rough explanation of significant changes:
 
