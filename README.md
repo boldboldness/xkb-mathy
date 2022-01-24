@@ -1,8 +1,8 @@
 # xkb-mathy
 
-A US QUERTY math keyboard layout for Xkeyboard
-This keyboard is intended for programming with unicode characters
-And is not a replacement for LaTex
+A US QUERTY math keyboard layout for Xkeyboard.
+
+This keyboard is intended for programming with unicode characters. It is not a replacement for LaTex
 
 xkb-mathy mostly intended for typing math characters in a plain-text setting (e.g. programming with unicode operators). It's *not* a replacement for LaTeX. To reach its maximum potential. There are no dead keys on this keyboard.                                       
 
