@@ -39,7 +39,7 @@ xkb_symbols "mathy" {
     key <AD03> {  [  e,  E,  Greek_epsilon,  U2203  ]  };                 // e E ε ∃    // Obvious replacement
     key <AD04> {  [  r,  R,  Greek_rho,  U211D  ]  };                     // r R ρ ℝ    // RHO looks like P. Let's make it the Reals
     key <AD05> {  [  t,  T,  Greek_tau,  U2020 ]  };                      // t T τ †    // TAU looks like T. Dagger is used in this spot on us(intl)
-    key <AD06> {  [  y,  Y,  Greek_upsilon, U2127 ]  };                   // y Y υ ℧    // I panicked and put this here. I'm afraid I'll forever think ℧ is UPSILON
+    key <AD06> {  [  y,  Y,  Greek_upsilon, U2127 ]  };                   // y Y υ ℧    // Latinized Upsilon
     key <AD07> {  [  u,  U,  Greek_theta,  Greek_THETA  ]  };             // u U θ Θ 
     key <AD08> {  [  i,  I,  Greek_iota,  U21D4  ]  };                    // i I ι ⇔    // I is for Iff
     key <AD09> {  [  o,  O,  U2218,  U25CB ]  };                          // o O ∘ ○    // Circles
