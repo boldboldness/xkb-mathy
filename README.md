@@ -49,7 +49,7 @@ mathy   us: English (US Mathy)
   <configItem>
     <name>mathy</name>
     <description>English (US Mathy)</description>
-   </configItem>
+  </configItem>
 </variant>
 ```
 
