@@ -1,0 +1,85 @@
+partial alphanumeric_keys
+xkb_symbols "mathy" {
+    // I'm better at remembering locations on the keyboard than nicknames of symbols
+    // and want a keyboard layout that gives me access to all kinds of crazy keys.
+
+    // Ultimately the goal will be to flesh-out the Compose keys enough 
+    // such that all UTF-8 math symbols can be derived via Compose.
+    // Future iterations of this keyboard will be further designed around Compose. 
+
+    // In it's current state, alt-gr brings up a modified version of the Greek keyboard. 
+    // All greek characters are in their base locations
+    // except for a subset of letters whose Greek caps look like Latin characters
+    // which have been replaced by hopefully sensible substitutes. 
+
+    // Rationalizations of my arbitrary decisions are included
+
+    // This keyboard does NOT have as many more common characters (such as ÷ or ≠)
+    // because they can be very easily composed. 
+
+    include "us(basic)"
+    name[Group1]="English (US Mathy)";
+
+    key <TLDE> {  [  grave,   asciitilde, U25A1, U25B3 ]  };              // ` ~ □ △    // Arbitrary -- gotta put these somewhere for now. 
+    key <AE01> {  [  1,  exclam, U22A4, U22A5  ]  };                      // 1 ! ⊤ ⊥    // 1 is True | !1 is False
+    key <AE02> {  [  2,  at, U220E, U2219 ]  };                           // 2 @ ∎ ∙    // TWOmbstone character |  @ is used for dot product in python
+    key <AE03> {  [  3,  numbersign, U03F5, U2201  ]  };                  // 3 # ϵ ∁    // other "eta" right above normal eta | Cardinality is a big #
+    key <AE04> {  [  4,  dollar,  U2220, U222B  ]  };                     // 4 $ ∠ ∫    // 4 has an angle in its shape | $ is an S shaped thing
+    key <AE05> {  [  5,  percent, U2136, U2137  ]  };                     // 5 % ℶ ℵ    // Aleph looks kinda like a %, might as well puth Beth there too
+    key <AE06> {  [  6,  asciicircum,  U03D1, U221A]  };                  // 6 ^ ϑ √    // Had to go somewhere, kinda looks like a 6 | Inverse operation of ^
+    key <AE07> {  [  7,  ampersand,  U2138, U214B  ]  };                  // 7 & ℸ ⅋    // Looks like a 7 | Upside down
+    key <AE08> {  [  8,  asterisk, U221E, U22C6  ]  };                    // 8 * ∞ ⋆    // Infinity looks like a rotated 8 | star → star
+    key <AE09> {  [  9,  parenleft,  U221D, U27E8  ]  };                  // 9 ( ∝ ⟨    // Vaguely looks like a rotated 9 | Bra looks like a good fit here
+    key <AE10> {  [  0,  parenright, U2205, U27E9  ]  };                  // 0 ) ∅ ⟩    // Null makes sense at 0 | Ket also makes sense
+    key <AE11> {  [  minus,  underscore, U00AC, U203E ]  };               // - _ ¬ ‾    // negative ~ not | opposite of underscore
+    key <AE12> {  [  equal,  plus,  U220A, U00D7  ]  };                   // = + ∊ ×    // seems like an okay place for element inclusion | rotated +
+
+    key <AD01> {  [  q,  Q,  U2202, U2207  ]  };                          // q Q ∂ ∇    // On the Greek keyboard, this key is semicolon. Putting this quality spot to better use for derivatives. 
+    key <AD02> {  [  w,  W,  Greek_finalsmallsigma,  U2211  ]  };         // w W ς ∑    // Final Sigma gets the Big Sigma
+    key <AD03> {  [  e,  E,  Greek_epsilon,  U2203  ]  };                 // e E ε ∃    // Obvious replacement
+    key <AD04> {  [  r,  R,  Greek_rho,  U211D  ]  };                     // r R ρ ℝ    // RHO looks like P. Let's make it the Reals
+    key <AD05> {  [  t,  T,  Greek_tau,  U2020 ]  };                      // t T τ †    // TAU looks like T. Dagger is used in this spot on us(intl)
+    key <AD06> {  [  y,  Y,  Greek_upsilon, U2127 ]  };                   // y Y υ ℧    // I panicked and put this here. I'm afraid I'll forever think ℧ is UPSILON
+    key <AD07> {  [  u,  U,  Greek_theta,  Greek_THETA  ]  };             // u U θ Θ 
+    key <AD08> {  [  i,  I,  Greek_iota,  U21D4  ]  };                    // i I ι ⇔    // I is for Iff
+    key <AD09> {  [  o,  O,  U2218,  U25CB ]  };                          // o O ∘ ○    // Circles
+    key <AD10> {  [  p,  P,  Greek_pi,  Greek_PI  ]  };                   // p P π Π    // I chose to leave this as Small PI. May not have been the best choice.
+    key <AD11> {  [ bracketleft,  braceleft, U230A, U2308 ]  };           // [ { ⌊ ⌈ 
+    key <AD12> {  [ bracketright, braceright, U230B, U2309 ]  };          // ] } ⌋ ⌉ 
+
+    key <AC01> {  [  a,  A,  Greek_alpha,  U2200  ]  };                   // a A α ∀    // Obvious replacement
+    key <AC02> {  [  s,  S,  Greek_sigma,  Greek_SIGMA  ]  };             // s S σ Σ    // Inner sigma and Greek Sigma
+    key <AC03> {  [  d,  D,  Greek_delta,  Greek_DELTA  ]  };             // d D δ Δ    // currently Greek Delta. Need to change this. 
+    key <AC04> {  [  f,  F,  Greek_phi,  Greek_PHI  ]  };                 // f F φ Φ
+    key <AC05> {  [  g,  G,  Greek_gamma,  Greek_GAMMA  ]  };             // g G γ Γ
+    key <AC06> {  [  h,  H,  Greek_eta,  U210F  ]  };                     // h H η ℏ    // Really need planck's constant somwhere (though I'm shocked it's not in Compose)
+    key <AC07> {  [  j,  J,  Greek_xi,  Greek_XI  ]  };                   // j J ξ Ξ
+    key <AC08> {  [  k,  K, Greek_kappa,  U211A  ]  };                    // k K κ ℚ    // Big stretch here. Kappa starts with a similar sound as Q. 
+    key <AC09> {  [  l,  L,  Greek_lamda,  Greek_LAMDA  ]  };             // l L λ Λ
+    key <AC10> {  [ semicolon,  colon, U22EE, U22EF ]  };                 // ; : ⋮ ⋯    // I regret this one. 
+    key <AC11> {  [ apostrophe,  quotedbl, U2227, U2229  ]  };            // ' " ∧ ∩    // Related to the /? key
+
+    key <AB01> {  [  z,  Z,  Greek_zeta,  U2124  ]  };                    // z Z ζ ℤ
+    key <AB02> {  [  x,  X,  Greek_chi,  U2012  ]  };                     // x X χ ℂ    // Big stretch here. Latinized chi begins with a 'C', thus Complex
+    key <AB03> {  [  c,  C,  Greek_psi,  Greek_PSI  ]  };                 // c C ψ Ψ
+    key <AB04> {  [  v,  V,  Greek_omega,  Greek_OMEGA  ]  };             // v V ω Ω
+    key <AB05> {  [  b,  B,  Greek_beta,  U212C  ]  };                    // b B β ℬ    // Fancy B, why not?
+    key <AB06> {  [  n,  N,  Greek_nu,  U2115  ]  };                      // n N ν ℕ
+    key <AB07> {  [  m,  M,  Greek_mu,  U2020  ]  };                      // m M μ †    // This needs to be changed. Dagger shouldn't be here. 
+    key <AB08> {  [  comma,  less, U228F, U2282 ]  };                     // , < ⊏ ⊂
+    key <AB09> {  [  period,  greater, U2290, U2283  ]  };                // . > ⊐ ⊂
+    key <AB10> {  [  slash,  question, U2228, U222A  ]  };                // / ? ∨ ∪    // Related to the '" key
+
+    key <BKSL> {  [ backslash, bar, U25CA, U2225  ]  };                   // \ | ◊ ∥    // Needed a Lozenge somewhere | Double bar always nice, but should be moved to Compose
+
+
+    // Arrows on the keypad at Level 3
+    key <UP>  { [ up, up, U2191, U21D1 ]};                        // up up ↑ ⇑ 
+    key <DOWN> { [ down, down, U2193, U21D3 ]};                   // down down ↓ ⇓
+    key <LEFT> { [ left, left, U2190, U21D0 ]};                   // left left ← ⇐
+    key <RGHT> { [ right, right,U2192, U21D2 ]};                  // right right → ⇒ 
+
+    include "level3(ralt_switch)"
+    include "compose(caps)"
+
+};
