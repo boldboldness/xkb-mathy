@@ -8,7 +8,7 @@ xkb-mathy mostly intended for typing math characters in a plain-text setting (e.
 
 ## Layout Changes:
 
-The layout is your typical four level keyboard. By default holding AltGr (the right Alt key), the keys are 'shifted' to Level 3. Holding AltGr and Shift brings the keys Level 4. 
+The layout is your typical four level keyboard. By default, holding AltGr (the right Alt key) 'shifts' the keys to Level 3. Holding AltGr and Shift brings the keys Level 4. 
 
 The true power of this requires use of the "Compose Key". This, coupled with my hatred of Caps Lock, compelled me to replace Caps Lock with Compose. Further down this file ~~are~~ will be suggested configuration change if you happen to hate this or any other default.
 
@@ -63,10 +63,10 @@ Failing this, restarting your X-session on your system should suffice.
 
 ## To do:
 
-1. Properly package this code for easy install
+1. Properly package this for easy install. 
 2. Iterate upon key placement. 
 3. Variants upon this: 
-  - Preferring "Math" characters vs "Greek" characters (e.g. ∑ vs Σ). Aesthetically I prefer the latter for plain text, as the characters are more likely to be rendered more consistently, but the unicode semantics underneath beg for the former. Maybe use Compose to get the math/big versions of characters?
+  - Choosing "Math" characters vs "Greek" characters (e.g. ∑ vs Σ). Aesthetically I prefer the latter for plain text, as the characters are more likely to be rendered more consistently, but the unicode semantics underneath beg for the former. Maybe use Compose to get the math/big versions of characters?
   - To many, the numpad is useless. These keys could be reworked to be a huge 'Arrow' pad. 
 4. The Compose Key is good, but could be much more powerful. The Compose key is largely focused on combining ASCII keys to create symbols, especially for adding diacritics to characters. On browsing various unicode blocks, most of the math characters are diacritics upon some root symbol (e.g. ⊆, which can currently be composed with ⊂ and \_). Would love to rework it with a wholly redone set of custom mappings.
 5. Some kind of hotkey combination to change letter variants? There are 10 different character sets for 'math' variants of characters in Unicode. The most common such characters (e.g. ℤ, ℝ, ℬ) have been separated into their own block. It'd be fun to have a hotkey combination to swap among the various forms. 
