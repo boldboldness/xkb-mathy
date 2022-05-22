@@ -19,7 +19,7 @@ The layout is a modification of the standard Greek keyboard, replacing punctuati
 
 #### Notes: 
 
-- Handwavey explanations for questionable keybinding choices are found in the source code
+- Vague, andwavey explanations for questionable keybinding choices are found in the source code.
 - The standard Greek keyboard layout is modeled after QUERTY, so you can often reasonably guess the character location.
 - ∂ and ∇ are on the Q key. On the Greek layout, this is the colon/semicolon key.
 - All Greek characters are their "Greek" versions (e.g. "Σ"), and not their "Math" versions. (e.g. "∑").
@@ -28,7 +28,7 @@ The layout is a modification of the standard Greek keyboard, replacing punctuati
 - Some popular characters are absent, such as ≠ and ÷, as they can sensibly be created via the Compose key: (e.g. Compose(=/) → ≠, and Compose(-:) → ÷)
 - Notable new lookalike keys: 
   - "AltGr"+"3" → Greek epsilon "ϵ", whereas "AltGr"+"=" → Element-of "∈"
-  - "AltGr"+"Shift"+"L" → Capital lambda "Λ", wheras "AltGr"+";" → Logican And "∧"
+  - "AltGr"+"Shift"+"L" → Capital lambda "Λ", whereas "AltGr"+";" → Logican And "∧"
 
 ## Current version:
 
