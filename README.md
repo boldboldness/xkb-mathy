@@ -92,6 +92,6 @@ See: **TODO**
 * Extend Compose Key characters. Obvious things like:
   - Compose(ΣΣ) → ∑
   - Compose(h-) → ℏ
+* Add Levels 3 and 4 to the Numpad. More Arrows? Box-drawing characters?
 * I don't have that extra key between "Left Shift" and "Z", so it went unmodified. Could put something fun there.
-* 
 * Probably lots of other stuff. 
