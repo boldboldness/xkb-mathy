@@ -40,24 +40,24 @@ Version 0.0.2 -- lots of changes.
 
 **Please make backups of every file you edit. Misconfigured xkb rules can be troublesome to resolve. I am not responsible for your system.**
 
-* Find the directory on your system which contains xkb. Possible locations include: 
+1. Find the directory on your system which contains xkb. Possible locations include: 
 
 - /etc/X11/xkb
 - /usr/share/X11/xkb
 
-* Append the contents of the *us_mathy* file to your *xkb/symbols/us* file
+2. Append the contents of the *us_mathy* file to your *xkb/symbols/us* file
 
 ```
 sudo echo us_mathy >> **path/to/**xkb/symbols/us
 ```
 
-* In your *xkb/rules/evdev.lst* file, under the `! variant` section, add the following line: 
+3. In your *xkb/rules/evdev.lst* file, under the `! variant` section, add the following line: 
 
 ```
 mathy   us: English (US Mathy)
 ```
 
-* In your *xkb/rules/evdev.xml* file, in the `<layoutList>` section, find the `<layout>` whose `<configItem>` `<name>` is "us". Then add the following code to the `<layout>`'s `<variantList>`:
+4. In your *xkb/rules/evdev.xml* file, in the `<layoutList>` section, find the `<layout>` whose `<configItem>` `<name>` is "us". Then add the following code to the `<layout>`'s `<variantList>`:
 ```
 <variant>
   <configItem>
@@ -71,7 +71,7 @@ mathy   us: English (US Mathy)
 </variant>
 ```
 
-* xkb needs to be reconfigured for it to recognize your changes. In a terminal shell run the following command:
+5. xkb needs to be reconfigured for it to recognize your changes. In a terminal shell run the following command:
 
 ```
 sudo dpkg-reconfigure xkb-data
@@ -79,7 +79,7 @@ sudo dpkg-reconfigure xkb-data
 
 If this doesn't work, you can log-out/log-in or restart your X-session.
 
-* Activate the keyboard layout in your system settings, or whatever means you prefer. 
+6. Activate the keyboard layout in your system settings, or by whatever means you prefer. 
 
 ### Install as user:
 
@@ -92,5 +92,6 @@ See: **TODO**
 * Extend Compose Key characters. Obvious things like:
   - Compose(ΣΣ) → ∑
   - Compose(h-) → ℏ
-* I don't have that extra key between "Left Shift" and "Z", so it went unmodified. Could put something fun there. 
+* I don't have that extra key between "Left Shift" and "Z", so it went unmodified. Could put something fun there.
+* 
 * Probably lots of other stuff. 
