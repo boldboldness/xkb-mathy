@@ -1,73 +1,96 @@
-# xkb-mathy
+# xkb-us-mathy
 
-A US QUERTY math keyboard layout for Xkeyboard.
-
-This keyboard is intended for programming with unicode characters. It is not a replacement for LaTeX.
-
-xkb-mathy mostly intended for typing math characters in a plain-text setting (e.g. programming with unicode operators). It's *not* a replacement for LaTeX. To reach its maximum potential. There are no dead keys on this keyboard.                                       
+A US QUERTY keyboard layout for Xkeyboard, intended for quickly typing mathematical symbols in plain-text settings, such as message boards or programming with unicode operators.                                        
 
 ## Layout Changes:
 
-The layout is your typical four level keyboard. By default, holding AltGr (the right Alt key) 'shifts' the keys to Level 3. Holding AltGr and Shift brings the keys Level 4. 
+The layout is a modification of the standard Greek keyboard, replacing punctuation and look-alike Greek characters with somewhat-sensible replacements. You can access the new keys by holding the Level 3 Modifier key, and additional keys via the Compose key (Ref: https://en.wikipedia.org/wiki/Compose_key). This layout also changes how CapsLock functions. 
 
-The true power of this requires use of the "Compose Key". This, coupled with my hatred of Caps Lock, compelled me to replace Caps Lock with Compose. Further down this file ~~are~~ will be suggested configuration change if you happen to hate this or any other default.
+### Modifier Key Changes:
 
-// TODO: Create a visual of the layout. Keybindings can be seen in code comments. 
+- The Level 3 shift key (henceforth referred to as "AltGr") are mapped to the *Right Alt* and *Caps Lock* keys.
+- Holding *Shift* and *AltGr* brings up Level 4 keys
+- Caps Lock can be toggled by pressing both *Shift* keys at the same time. 
+- The Compose key is mapped to the *Right Super* key (option in source for *Right Ctrl*)
 
-The layout is a heavy modification of the standard Greek layout (which mercifully is already organized to be similar to QUERTY). All punctuation keys, number keys, and arrow keys are replaced at Levels 3 and 4. Rough explanation of significant changes:
+### Layout:
 
-- ∂ and ∇ are on the Q key. On the Greek layout, this is the colon and semicolon keys.
-- Greek Capital Letters which appear identical to their Latin counterparts are replaced alternate letterforms that hopefully make sense (e.g. A becomes ∀, R becomes ℝ, H becomes ℏ).
-- the o and O key is now the 'circles' key, ∘ and ○.
+![Visual of keyboard layout](/xkb-us-mathy_layout.png)
+
+#### Notes: 
+
+- Handwavey explanations for questionable keybinding choices are found in the source code
+- The standard Greek keyboard layout is modeled after QUERTY, so you can often reasonably guess the character location.
+- ∂ and ∇ are on the Q key. On the Greek layout, this is the colon/semicolon key.
+- All Greek characters are their "Greek" versions (e.g. "Σ"), and not their "Math" versions. (e.g. "∑").
+- Hebrew letters ℵ and ℶ are their "math" versions, so they won't reverse your text.
 - Pressing an Arrow key at Level 3 produces an arrow character → ↑ ← ↓, and Level 4 ⇒ ⇑ ⇐ ⇓
- 
-The Compose Key carries with it many useful defaults. For this reason, I've eschewed placing some very popular keys if they are extremely easly to blindly guess with the Compose key. For example, in this layout the ≠ key is only accessible via Compose(=/) and ÷ is accessible from Compose(-:).
+- Some popular characters are absent, such as ≠ and ÷, as they can sensibly be created via the Compose key: (e.g. Compose(=/) → ≠, and Compose(-:) → ÷)
+- Notable new lookalike keys: 
+  - "AltGr"+"3" → Greek epsilon "ϵ", whereas "AltGr"+"=" → Element-of "∈"
+  - "AltGr"+"Shift"+"L" → Capital lambda "Λ", wheras "AltGr"+";" → Logican And "∧"
 
 ## Current version:
 
-I literally *just* made this, so I'm definitely going to shuffle things around. 
+Version 0.0.2 -- lots of changes.
 
 ## Install Instructions:
 
-1. Find the directory on your system which contains xkb. Possible locations include: 
-  - /etc/X11/xkb
-  - /usr/share/X11/xkb
+### Install as root:
 
-\[My limited understanding of xkb is that... \] Configuring the keyboard *requires* updating the files outside of your home directory. **Please make backups of every file you edit, such that you revert back easily if something goes awry.**
+**Please make backups of every file you edit. Misconfigured xkb rules can be troublesome to resolve. I am not responsible for your system.**
 
-2. Copy the contents of *us_mathy* and paste it to the bottom of your **xkb/symbols/us** file. 
+* Find the directory on your system which contains xkb. Possible locations include: 
 
-3. In your **xkb/rules/evdev.lst** file, in the *! variant* section, add the following line: 
+- /etc/X11/xkb
+- /usr/share/X11/xkb
+
+* Append the contents of the *us_mathy* file to your *xkb/symbols/us* file
+
+```
+sudo echo us_mathy >> **path/to/**xkb/symbols/us
+```
+
+* In your *xkb/rules/evdev.lst* file, under the `! variant` section, add the following line: 
 
 ```
 mathy   us: English (US Mathy)
 ```
 
-4. In your **xkb/rules/evdev.xml** file, in the \<layoutList\> section, find the \<layout\> whose \<configItem\> \<name\> is "us". Then add the following code to the \<layout\>'s \<variantList\>:
+* In your *xkb/rules/evdev.xml* file, in the `<layoutList>` section, find the `<layout>` whose `<configItem>` `<name>` is "us". Then add the following code to the `<layout>`'s `<variantList>`:
 ```
 <variant>
   <configItem>
     <name>mathy</name>
+    <shortDescription>mathy</shortDescription>
     <description>English (US Mathy)</description>
+    <languageList>
+      <iso639Id>eng</iso639Id>
+    </languageList>
   </configItem>
 </variant>
 ```
 
-5. xkb needs to be reconfigured for it to recognize your changes. In a terminal shell run the following command:
+* xkb needs to be reconfigured for it to recognize your changes. In a terminal shell run the following command:
 
 ```
 sudo dpkg-reconfigure xkb-data
 ```
 
-Failing this, restarting your X-session on your system should suffice. 
+If this doesn't work, you can log-out/log-in or restart your X-session.
 
-## To do:
+* Activate the keyboard layout in your system settings, or whatever means you prefer. 
 
-1. Properly package this for easy install. 
-2. Iterate upon key placement. 
-3. Variants upon this: 
-  - Choosing "Math" characters vs "Greek" characters (e.g. ∑ vs Σ). Aesthetically I prefer the latter for plain text, as the characters are more likely to be rendered more consistently, but the unicode semantics underneath beg for the former. Maybe use Compose to get the math/big versions of characters?
-  - To many, the numpad is useless. These keys could be reworked to be a huge 'Arrow' pad. 
-4. The Compose Key is good, but could be much more powerful. The Compose key is largely focused on combining ASCII keys to create symbols, especially for adding diacritics to characters. On browsing various unicode blocks, most of the math characters are diacritics upon some root symbol (e.g. ⊆, which can currently be composed with ⊂ and \_). Would love to rework it with a wholly redone set of custom mappings.
-5. Some kind of hotkey combination to change letter variants? There are 10 different character sets for 'math' variants of characters in Unicode. The most common such characters (e.g. ℤ, ℝ, ℬ) have been separated into their own block. It'd be fun to have a hotkey combination to swap among the various forms. 
-6. Probably lots of other stuff. 
+### Install as user:
+
+See: **TODO**
+
+## TODO:
+
+* Better installation method.
+* Instructions for user install. 
+* Extend Compose Key characters. Obvious things like:
+  - Compose(ΣΣ) → ∑
+  - Compose(h-) → ℏ
+* I don't have that extra key between "Left Shift" and "Z", so it went unmodified. Could put something fun there. 
+* Probably lots of other stuff. 
