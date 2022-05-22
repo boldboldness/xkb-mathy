@@ -15,7 +15,7 @@ The layout is a modification of the standard Greek keyboard, replacing punctuati
 
 ### Layout:
 
-![Visual of keyboard layout](/xkb-us-mathy_layout.png)
+![Visual of keyboard layout](/xkb_us_mathy_layout.png)
 
 #### Notes: 
 
