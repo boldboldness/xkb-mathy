@@ -88,7 +88,9 @@ See: **TODO**
 ## TODO:
 
 * Better installation method.
-* Instructions for user install. 
+* Instructions for user install.
+* Change a few of the poorer keybindings I regret to have made
+* Variant to default to Math versions of Greek letters
 * Extend Compose Key characters. Obvious things like:
   - Compose(ΣΣ) → ∑
   - Compose(h-) → ℏ
