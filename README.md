@@ -19,7 +19,7 @@ The layout is a modification of the standard Greek keyboard, replacing punctuati
 
 #### Notes: 
 
-- Vague, andwavey explanations for questionable keybinding choices are found in the source code.
+- Vague, handwavey explanations for questionable keybinding choices are found in the source code.
 - The standard Greek keyboard layout is modeled after QUERTY, so you can often reasonably guess the character location.
 - ∂ and ∇ are on the Q key. On the Greek layout, this is the colon/semicolon key.
 - All Greek characters are their "Greek" versions (e.g. "Σ"), and not their "Math" versions. (e.g. "∑").
